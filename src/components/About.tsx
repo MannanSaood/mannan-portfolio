@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { PlayIcon } from './Icons';
 
-const About: React.FC = () => {
+const About: React.FC = React.memo(() => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const bioTextRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +48,7 @@ const About: React.FC = () => {
               <span className="w-6 h-6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" /></span>
               <div>
                 <h4 className="font-bold text-left text-charcoal-dark dark:text-cream-light">GitHub</h4>
-                <p className="text-sm text-left text-gray-500 dark:text-gray-400">/MannanSaood</p>
+                <p className="text-sm text-left text-gray-500 dark:text-gray-400">/SyedMannanSaood</p>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/mannansaood/" target="_blank" rel="noopener noreferrer" className="connect-card flex items-center gap-3 p-4 bg-cream-light dark:bg-charcoal-dark rounded-lg transition-transform duration-300 hover:scale-105">
@@ -56,7 +56,7 @@ const About: React.FC = () => {
               <span className="w-6 h-6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" /></span>
               <div>
                 <h4 className="font-bold text-left text-charcoal-dark dark:text-cream-light">LinkedIn</h4>
-                <p className="text-sm text-left text-gray-500 dark:text-gray-400">/in/mannansaood</p>
+                <p className="text-sm text-left text-gray-500 dark:text-gray-400">/in/syedmannansaood</p>
               </div>
             </a>
           </div>
@@ -64,6 +64,6 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Contact: React.FC = () => (
+const Contact: React.FC = React.memo(() => (
   <section id="contact" className="py-20 px-4 bg-orange-500/5 dark:bg-charcoal-surface">
     <div className="max-w-3xl mx-auto text-center">
       <h2 className="text-4xl font-bold mb-4 text-charcoal-dark dark:text-cream-light">Start a New Adventure</h2>
@@ -10,6 +10,6 @@ const Contact: React.FC = () => (
       </a>
     </div>
   </section>
-);
+));
 
 export default Contact;

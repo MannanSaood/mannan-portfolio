@@ -32,8 +32,8 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id:
   }
 };
 
-const Header: React.FC<HeaderProps> = ({ theme, setTheme, activeSection }) => (
-  <header className="fixed top-0 left-0 right-0 z-50 bg-cream-light dark:bg-charcoal-dark/80 backdrop-blur-sm border-b border-orange-500/10 dark:border-magenta-light/10">
+const Header: React.FC<HeaderProps> = React.memo(({ theme, setTheme, activeSection }) => (
+  <header className="fixed top-0 left-0 right-0 z-50 bg-cream-light/80 dark:bg-charcoal-dark/80 backdrop-blur-sm border-b border-orange-500/10 dark:border-magenta-light/10">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center py-4">
         <a href="#hero" className="font-bold text-xl tracking-wider text-charcoal-dark dark:text-cream-light" onClick={e => scrollToSection(e, 'hero')}>SYED MANNAN SAOOD</a>
@@ -47,6 +47,6 @@ const Header: React.FC<HeaderProps> = ({ theme, setTheme, activeSection }) => (
       </div>
     </div>
   </header>
-);
+));
 
 export default Header;
