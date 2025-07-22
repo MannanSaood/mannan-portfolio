@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimationStyles, EmberBackground, MistBackground } from './components/Animations';
 import Header from './components/Header';
 import Hero from './components/Hero';
