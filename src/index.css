@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-lavender-light {
+    background-color: #A78BFA !important;
+  }
+  .dark .dark\:bg-charcoal-dark {
+    background-color: #1A1A20 !important;
+  }
+  .dark .dark\:text-cream-light {
+    color: #FEF9F3 !important;
+  }
+  .dark .dark\:text-magenta-light {
+    color: #F472B6 !important;
+  }
+  .dark .dark\:text-lavender-light {
+    color: #A78BFA !important;
+  }
+  .dark .dark\:text-charcoal-dark {
+    color: #1A1A20 !important;
+  }
+}
