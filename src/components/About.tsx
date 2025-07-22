@@ -39,7 +39,7 @@ const About: React.FC = React.memo(() => {
         <div className="mt-8 max-w-2xl mx-auto bg-cream-light dark:bg-charcoal-surface rounded-lg shadow-lg border border-orange-500/10 dark:border-magenta-light/10 p-4 flex items-center gap-4 group">
           <div className="p-4 bg-orange-100 dark:bg-lavender-dark rounded-full">
             <div className="w-8 h-8 text-orange-500 dark:text-magenta-light">
-              <img src="../../public/pokeball.png" alt="Pokeball" className="w-full h-full transition-transform duration-500 group-hover:rotate-180" />
+              <img src="./pokeball.png" alt="Pokeball" className="w-full h-full transition-transform duration-500 group-hover:rotate-180" />
             </div>
           </div>
           <div className="flex-grow rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4">
