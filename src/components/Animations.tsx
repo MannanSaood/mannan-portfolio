@@ -9,10 +9,10 @@ export const AnimationStyles = () => (
     .animate-ember { animation-name: ember-float; animation-timing-function: linear; animation-iteration-count: infinite; }
     
     @keyframes mist-drift {
-      0% { transform: translateX(-100%) translateY(-10%) rotate(-5deg) scale(1); opacity: 0; }
+      0% { transform: translateX(-100%) translateY(0%) rotate(0deg) scale(1); opacity: 0; }
       20% { opacity: 0.6; }
       80% { opacity: 0.6; }
-      100% { transform: translateX(100%) translateY(10%) rotate(5deg) scale(1.2); opacity: 0; }
+      100% { transform: translateX(100%) translateY(0%) rotate(0deg) scale(1.2); opacity: 0; }
     }
     .animate-mist { position: absolute; width: 200%; height: 100%; background: radial-gradient(circle, rgba(173, 161, 221, 0.15) 0%, rgba(173, 161, 221, 0) 60%); animation-name: mist-drift; animation-timing-function: linear; animation-iteration-count: infinite; }
 
@@ -45,54 +45,6 @@ export const AnimationStyles = () => (
     .dark .connect-card::before {
         background: linear-gradient(120deg, var(--gradient-from, #A78BFA), var(--gradient-to, #F472B6));
     }
-    
-    /* Skill Card Animations */
-    .skill-card .fire-aura, .skill-card .energy-aura {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-    }
-    .skill-card.has-fire-effect:hover .fire-aura, .skill-card.has-grass-effect:hover .energy-aura {
-        opacity: 1;
-    }
-    @keyframes fire-burst {
-        0% { transform: translateY(100%) scale(0.5); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: translateY(-20%) scale(1.2); opacity: 0; }
-    }
-    .skill-card .fire-aura span {
-        position: absolute;
-        bottom: -10px;
-        width: 40px;
-        height: 60px;
-        background: radial-gradient(circle, #F4812F 20%, transparent 70%);
-        border-radius: 50%;
-        animation: fire-burst 1s ease-out infinite;
-    }
-    .skill-card .fire-aura span:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .skill-card .fire-aura span:nth-child(2) { left: 40%; animation-delay: 0.2s; }
-    .skill-card .fire-aura span:nth-child(3) { left: 70%; animation-delay: 0.1s; }
-
-    @keyframes energy-pulse {
-        0% { transform: scale(0.5); opacity: 0; }
-        50% { opacity: 0.8; }
-        100% { transform: scale(1.5); opacity: 0; }
-    }
-    .skill-card .energy-aura span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, #38A169 10%, transparent 60%);
-        border-radius: 50%;
-        animation: energy-pulse 1.5s ease-out infinite;
-    }
   `}</style>
 );
 
@@ -106,13 +58,13 @@ export const EmberBackground = () => (
                 animationDelay: `${Math.random() * 10}s`,
             }}></div>
         ))}
-        {/* Ember-colored mist overlay */}
+        {/* Ember-colored mist overlay - multiple layers for better coverage */}
         <div
             className="animate-mist"
             style={{
                 animationDuration: '45s',
                 animationDelay: '0s',
-                background: 'radial-gradient(circle, rgba(253,186,116,0.18) 0%, rgba(244,129,47,0.10) 40%, rgba(244,129,47,0) 70%)',
+                background: 'radial-gradient(circle, rgba(253,186,116,0.1) 0%, rgba(244,129,47,0.30) 40%, rgba(244,129,47,0) 70%)',
             }}
         ></div>
         <div
@@ -120,8 +72,7 @@ export const EmberBackground = () => (
             style={{
                 animationDuration: '55s',
                 animationDelay: '-15s',
-                transformOrigin: 'bottom left',
-                background: 'radial-gradient(circle, rgba(244,129,47,0.12) 0%, rgba(253,186,116,0.08) 40%, rgba(244,129,47,0) 70%)',
+                background: 'radial-gradient(circle, rgba(244,129,47,0.05) 0%, rgba(253,186,116,0.2) 40%, rgba(244,129,47,0) 70%)',
             }}
         ></div>
         <div
@@ -129,8 +80,32 @@ export const EmberBackground = () => (
             style={{
                 animationDuration: '65s',
                 animationDelay: '-30s',
-                transformOrigin: 'top right',
-                background: 'radial-gradient(circle, rgba(253,186,116,0.10) 0%, rgba(244,129,47,0.06) 40%, rgba(244,129,47,0) 70%)',
+                background: 'radial-gradient(circle, rgba(253,186,116,0.05) 0%, rgba(244,129,47,0.1) 40%, rgba(244,129,47,0) 70%)',
+            }}
+        ></div>
+        <div
+            className="animate-mist"
+            style={{
+                animationDuration: '50s',
+                animationDelay: '-25s',
+                background: 'radial-gradient(circle, rgba(244,129,47,0.05) 0%, rgba(253,186,116,0.05) 40%, rgba(244,129,47,0) 70%)',
+            }}
+        ></div>
+        {/* Additional mist layers for bottom-left coverage */}
+        <div
+            className="animate-mist"
+            style={{
+                animationDuration: '60s',
+                animationDelay: '-40s',
+                background: 'radial-gradient(circle, rgba(253,186,116,0.06) 0%, rgba(244,129,47,0.02) 40%, rgba(244,129,47,0) 70%)',
+            }}
+        ></div>
+        <div
+            className="animate-mist"
+            style={{
+                animationDuration: '70s',
+                animationDelay: '-50s',
+                background: 'radial-gradient(circle, rgba(244,129,47,0.05) 0%, rgba(253,186,116,0.01) 40%, rgba(244,129,47,0) 70%)',
             }}
         ></div>
     </div>
@@ -147,8 +122,12 @@ export const MistBackground = () => (
             }}></div>
         ))}
         <div className="animate-mist" style={{ animationDuration: '45s', animationDelay: '0s' }}></div>
-        <div className="animate-mist" style={{ animationDuration: '55s', animationDelay: '-15s', transformOrigin: 'bottom left' }}></div>
-        <div className="animate-mist" style={{ animationDuration: '65s', animationDelay: '-30s', transformOrigin: 'top right' }}></div>
+        <div className="animate-mist" style={{ animationDuration: '55s', animationDelay: '-15s' }}></div>
+        <div className="animate-mist" style={{ animationDuration: '65s', animationDelay: '-30s' }}></div>
+        <div className="animate-mist" style={{ animationDuration: '50s', animationDelay: '-25s' }}></div>
+        {/* Additional mist layers for comprehensive coverage */}
+        <div className="animate-mist" style={{ animationDuration: '60s', animationDelay: '-40s' }}></div>
+        <div className="animate-mist" style={{ animationDuration: '70s', animationDelay: '-50s' }}></div>
     </div>
 );
 
